@@ -1,0 +1,32 @@
+body, html,
+.container {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto 1fr auto;
+}
+
+.gameboard-container {
+    display: grid;
+    align-items: center;
+}
+
+.gameboard {
+    display: grid;
+    grid-template: repeat(3,150px) / repeat(3, 150px);
+    border: 1px solid black;
+}
+
+.gameboard > div {
+    border: 1px solid black;
+    font-size: 8rem;
+    display: grid;
+}
+.gameboard > div > span {
+    justify-self: center;
+    align-self: center;
+}
