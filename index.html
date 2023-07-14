@@ -9,21 +9,43 @@
     </head>
     <body>
         <div class="container">
-            <div class="header">Tic Tac Toe</div>
-            <div class="gameboard-container">
-                <div class="gameboard">
-                    <div data-board-number="0"><span></span></div>
-                    <div data-board-number="1"><span></span></div>
-                    <div data-board-number="2"><span></span></div>
-                    <div data-board-number="3"><span></span></div>
-                    <div data-board-number="4"><span></span></div>
-                    <div data-board-number="5"><span></span></div>
-                    <div data-board-number="6"><span></span></div>
-                    <div data-board-number="7"><span></span></div>
-                    <div data-board-number="8"><span></span></div>
+            <div class="header">
+                <span>Tic Tac Toe</span>
+                <div class="versus">
+                    <button>Player Vs Player</button>
+                    <button>Ai</button>
                 </div>
             </div>
-            <footer class="footer">link to github</footer>
+            <div class="gameboard-container">
+                <form action="" class="grid">
+                    <div class="playerForm">
+                        <label for="playerX">Player X Name: <span class="optional">(Optional)</span></label>
+                        <input type="text" id="playerX" placeholder="If left empty, defaults to PlayerX">
+                    </div>
+                    <div class="playerForm">
+                        <label for="playerO">Player O Name: <span class="optional">(Optional)</span></label>
+                        <input type="text" id="playerO" placeholder="If left empty, defaults to PlayerO">
+                    </div>
+                </form>
+                <div class="game">
+                    <button type="button" class="start">Start</button>
+                    <button type="button" class="reset">Reset</button>
+                    <div class="gameboard">
+                        <div data-board-number="0"><span></span></div>
+                        <div data-board-number="1"><span></span></div>
+                        <div data-board-number="2"><span></span></div>
+                        <div data-board-number="3"><span></span></div>
+                        <div data-board-number="4"><span></span></div>
+                        <div data-board-number="5"><span></span></div>
+                        <div data-board-number="6"><span></span></div>
+                        <div data-board-number="7"><span></span></div>
+                        <div data-board-number="8"><span></span></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <a href="https://github.com/High23/tic-tac-toe" target=”_blank” >Visit repo</a>
+            </footer>
         </div>
     </body>
 </html>
