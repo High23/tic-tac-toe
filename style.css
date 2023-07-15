@@ -2,30 +2,37 @@ body, html,
 .container {
     height: 100%;
     margin: 0;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+* {
+    color: white;
 }
 
 .container {
     display: grid;
     justify-items: center;
     grid-template-rows: auto 1fr auto;
+    background-color: #27272a;
 }
 
 .gameboard-container {
     display: grid;
-    align-items: center;
+    align-items: start;
     grid-template-rows: auto 1fr;
     width: 100%;
     justify-items: center;
+    row-gap: 10px;
 }
 
 .gameboard {
     display: grid;
     grid-template: repeat(3, 180px) / repeat(3, 180px);
-    border: 1px solid black;    
+    border: 1px solid white;    
 }
 
 .gameboard > div {
-    border: 1px solid black;
+    border: 1px solid white;
     font-size: 8rem;
     display: grid;
 }
@@ -46,39 +53,43 @@ body, html,
 
 input {
     appearance: none;
-    padding: 5px;
+    padding: 5px 10px;
     border: 1px solid black;
+    border-radius: 10px;
+    color: black;
 }
 
 .header {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto auto 1fr;
     width: 100%;
     gap: 50px;
     font-size: 3rem;
-    padding-left: 100px;
 }
 
-.hidden {
-    display: none;
+.header > span {
+    padding-left: 100px;
 }
 
 .versus {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .versus > button {
     padding: 5px 15px;
 }
 
-.playerForm {
+.playerNameInput {
     display: grid;
     grid-template-rows: auto;
     width: 325px;
+    gap: 5px;
 }
 
-.playerForm > label {
+.playerNameInput > label {
     display: flex;
     justify-content: space-between;
 }
@@ -92,4 +103,61 @@ input {
 .reset, .start {
     padding: 10px 5px;
     width: 100px;
+}
+
+.form-and-winner {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    font-size: 1rem;
+    background-color: #52525b;
+    border: none;
+    border-radius: 10px;
+}
+
+button:active {
+    background-color: #737373;
+}
+
+.reset {
+    background-color: #b91c1c;
+}
+
+.reset:active {
+    background-color: #ef4444;
+}
+
+.start {
+    background-color: #1e40af;
+}
+
+.start:active {
+    background-color: #2563eb;
+}
+
+.result {
+    font-size: 1.5rem;
+}
+
+.clicked {
+    background-color: #4f46e5;
+}
+
+.github-icon {
+    width: 40px
+}
+
+a {
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+    justify-self: end;
 }
