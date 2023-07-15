@@ -73,8 +73,8 @@ const game = (function() {
         } else {
             nameInput[1].classList.remove('hidden');
             form.style.setProperty('justify-content', 'space-around');
-            form.style.setProperty('margin-top', '25px');
         }
+        form.style.setProperty('margin-top', '25px');
         nameInput[0].classList.remove('hidden');
         startButton.classList.remove('hidden');
         pvpButton.disabled = false;
