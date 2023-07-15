@@ -12,21 +12,24 @@
             <div class="header">
                 <span>Tic Tac Toe</span>
                 <div class="versus">
-                    <button>Player Vs Player</button>
-                    <button>Ai</button>
+                    <button type="button" class="PvP">Player Vs Player</button>
+                    <button type="button" class="PvE">Ai</button>
                 </div>
             </div>
             <div class="gameboard-container">
-                <form action="" class="grid">
-                    <div class="playerForm">
-                        <label for="playerX">Player X Name: <span class="optional">(Optional)</span></label>
-                        <input type="text" id="playerX" placeholder="If left empty, defaults to PlayerX">
-                    </div>
-                    <div class="playerForm">
-                        <label for="playerO">Player O Name: <span class="optional">(Optional)</span></label>
-                        <input type="text" id="playerO" placeholder="If left empty, defaults to PlayerO">
-                    </div>
-                </form>
+                <div class="form-and-winner">
+                    <form action="" class="grid">
+                        <div class="playerNameInput">
+                            <label for="playerX">Player X Name: <span class="optional">(Optional)</span></label>
+                            <input type="text" id="playerX" placeholder="If left empty, defaults to PlayerX">
+                        </div>
+                        <div class="playerNameInput">
+                            <label for="playerO">Player O Name: <span class="optional">(Optional)</span></label>
+                            <input type="text" id="playerO" placeholder="If left empty, defaults to PlayerO">
+                        </div>
+                    </form>
+                    <div class="result">Results</div>
+                </div>
                 <div class="game">
                     <button type="button" class="start">Start</button>
                     <button type="button" class="reset">Reset</button>
