@@ -32,6 +32,8 @@ const game = (function() {
     pvpButton.addEventListener('click', () => {
         nameInput[0].classList.remove('hidden')
         nameInput[1].classList.remove('hidden');
+        pvpButton.classList.add('clicked');
+        pveButton.classList.remove('clicked');
         form.style.setProperty('justify-content', 'space-around');
         mode = 'Player';
     });
@@ -39,12 +41,13 @@ const game = (function() {
     pveButton.addEventListener('click', () => {
         nameInput[0].classList.remove('hidden');
         nameInput[1].classList.add('hidden');
+        pveButton.classList.add('clicked');
+        pvpButton.classList.remove('clicked');
         form.style.setProperty('justify-content', 'center');
         mode = 'Ai';
     });
 
     startButton.addEventListener('click', () => {
-        
         nameInput[0].classList.add('hidden');
         nameInput[1].classList.add('hidden');
         startButton.classList.add('hidden');
@@ -53,8 +56,10 @@ const game = (function() {
         pveButton.disabled = true;
         playerX = Player(name[0].value, 'X');
         playerO = Player(name[1].value, 'O');
-        console.log(playerO);
-        console.log(playerX);
+        if (mode === undefined){
+            mode = 'Player';
+            pvpButton.classList.add('clicked');
+        } 
         game.startGame(mode);
     });
 
@@ -62,13 +67,18 @@ const game = (function() {
         stopGame()
         _gameBoard = Array(9);
         remainingTurns = 9;
+        if (mode === 'Ai'){
+            nameInput[1].classList.add('hidden');
+            form.style.setProperty('justify-content', 'center');
+        } else {
+            nameInput[1].classList.remove('hidden');
+            form.style.setProperty('justify-content', 'space-around');
+            form.style.setProperty('margin-top', '25px');
+        }
         nameInput[0].classList.remove('hidden');
-        nameInput[1].classList.remove('hidden');
         startButton.classList.remove('hidden');
         pvpButton.disabled = false;
         pveButton.disabled = false;
-        form.style.setProperty('justify-content', 'space-around');
-        form.style.setProperty('margin-top', '25px');
         gameBoardMark.forEach((span) => {
             span.textContent = '';
         });
@@ -187,7 +197,7 @@ const displayController = (function(){
             resultDisplay.textContent = `${winner}  is the winner!`;
         },
         pronounceTie: () => {
-            resultDisplay.textContent = 'Its a Tie!';
+            resultDisplay.textContent = "It's a Tie!";
         },
     };
 })();
